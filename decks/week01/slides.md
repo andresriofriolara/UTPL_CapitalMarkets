@@ -1,6 +1,6 @@
 <section class="title-slide">
 Semana 1 | Introducción
-<div class="subtitle">Markets • <em>Octubre 6, 2025</em></div>
+<div class="subtitle">Mercados y Riesgos Financieros • <em>Octubre 8, 2025</em></div>
 </section>
 
 ---
@@ -12,21 +12,20 @@ Semana 1 | Introducción
 4. Contenido Semana 1
 5. Dudas y Preguntas
 
-
 ---
 
 ## Sobre el Profesor
 - **Educación:**
     - Economista, UTPL<img src="../../shared/images/logo.png" width="90" />
     - MBA, INCAE BUSINESS SCHOOL<img src="../../shared/images/incae.png" width="90" />
+        - Especialidad en Finanzas, The Fuqua School of Business at Duke <img src="../../shared/images/duke.png" width="90" />
  
 
 --
 
 ## Sobre el Profesor
 - **Educación:**
-    - Especialidad en Finanzas, The Fuqua School of Business at Duke <img src="../../shared/images/duke.png" width="90" />
-    - PhD. (c), Ivey Business School at Western<img src="../../shared/images/ivey.png" width="90" />
+    - PhD. (c), Ivey Business School at Western University <img src="../../shared/images/ivey.png" width="90" />
 
 --
 
@@ -49,11 +48,13 @@ Semana 1 | Introducción
 ## Housekeeping
 - Correo: *aariofrio@utpl.edu.ec* — respondo tarde/noche
 - Cámara encendida para considerar la participación
+- Tutoría: Chat de Teams en Horario de Tutoría (excepciones existentes).
 
 
 ---
 
 ## Contenido Semana 1
+Introducción y Conceptos Generales
 
 ---
 
