@@ -18,6 +18,12 @@ Semana 2 | Panorama general de la teoría de los mercados financieros
 - **1.2 Ciclo financiero de las empresas**
 - **1.3 Eficiencia financiera y generación de valor**
 
+--
+
+## Big Mac Index
+
+
+
 ---
 
 ## Semana 2
