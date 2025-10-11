@@ -135,12 +135,15 @@ $$
 
 ## 2.3 · Teoría moderna de portafolio (Markowitz)
 
-**Marco media–varianza** (pesos \(w\), medias \(\mu\), matriz \(\Sigma\)):  
-\[
-\mu_p=w^\top\mu,\quad 
-\sigma_p^2=w^\top\Sigma w,\quad 
-\mathbf{1}^\top w=1.
-\]
+**Marco media–varianza** (pesos $ \mathbf{w} $, medias $ \boldsymbol{\mu} $, matriz $ \Sigma $):
+
+$$
+\begin{aligned}
+\mu_p &= \mathbf{w}^\top \boldsymbol{\mu},\\
+\sigma_p^2 &= \mathbf{w}^\top \Sigma\, \mathbf{w},\\
+\mathbf{1}^\top \mathbf{w} &= 1.
+\end{aligned}
+$$
 
 **Frontera eficiente**  
 - Carteras que **maximizan** retorno para varianza dada (o **minimizan** varianza para retorno objetivo).
