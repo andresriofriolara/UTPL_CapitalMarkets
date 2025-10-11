@@ -22,7 +22,15 @@ Semana 2 | Panorama general de la teoría de los mercados financieros
 
 ## Big Mac Index
 
-
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border:0;">
+  <iframe
+    src="https://worldpopulationreview.com/country-rankings/big-mac-index-by-country"
+    title="Big Mac Index by Country"
+    loading="lazy"
+    style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+    sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+  ></iframe>
+</div>
 
 ---
 
@@ -43,14 +51,36 @@ Panorama general de la teoría de los mercados financieros
 
 ## 2.1 · Teoría del valor presente y tasa de descuento
 
+El tiempo es nuestra variable mas importante. ¡Siempre!
+
+
+
+____________________________________________________________________________________________
+
+--
+
+Primero recordemos:
+
+$$V_f = V_p \left(1+i\right)^{t}$$
+
+--
+
+$$V_p = \frac{V_f}{\left(1+i\right)^{t}}$$
+
+--
+
 **Definición formal**  
-Para flujos \(\{CF_t\}_{t=1}^n\) y tasa \(r\):
-\[
-PV=\sum_{t=1}^{n}\frac{CF_t}{(1+r)^t}.
-\]
+Para flujos 
+Para flujos $\{CF_t\}_{t=1}^n$ y tasa $r$:
+
+$$
+PV = \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t}.
+$$
 
 - Si hay **múltiples riesgos**, \(r\) debe ser **consistente con el riesgo de los flujos** (no del emisor) y con **moneda** y **horizonte**.  
 - **Valor temporal vs prima por riesgo:** \(r=R_f+\mathrm{PR}\), con \(R_f\) libre de riesgo en **misma divisa y plazo**.
+
+--
 
 **Errores comunes**  
 - Descontar **flujos nominales** con **tasa real** (o viceversa).  
@@ -65,12 +95,13 @@ PV=\sum_{t=1}^{n}\frac{CF_t}{(1+r)^t}.
 
 ## 2.2 · Modelo de valoración de activos financieros (CAPM)
 
-**Ecuación (SML)**  
-\[
-\mathbb{E}[R_i]=R_f+\beta_i\big(\mathbb{E}[R_M]-R_f\big), 
-\qquad 
+**Ecuación (SML)**
+
+$$
+\mathbb{E}[R_i]=R_f+\beta_i\big(\mathbb{E}[R_M]-R_f\big), \qquad 
 \beta_i=\frac{\mathrm{Cov}(R_i,R_M)}{\mathrm{Var}(R_M)}.
-\]
+$$
+
 
 **Lectura conceptual**  
 - Solo “paga” el riesgo **sistemático**; el **idiosincrático** se **diversifica**.  
@@ -86,14 +117,16 @@ PV=\sum_{t=1}^{n}\frac{CF_t}{(1+r)^t}.
 5. **Expectativas homogéneas**.  
 6. **Cartera de mercado invertible**.
 
+--
+
 **Implicaciones empíricas / debate**  
-- **SML** con pendiente \(\mathbb{E}[R_M]-R_f\).  
+- **SML** con pendiente $(\mathbb{E}[R_M]-R_f)$.  
 - Evidencia **mixta**: retorno–beta débil a veces; **anomalías** (tamaño, valor) → **multifactor**.
 
 --
 
 **Pitfalls al estimar CAPM**  
-- \(R_f\) mal elegido (**moneda/plazo**).  
+- $(R_f)$ mal elegido (**moneda/plazo**).  
 - **Horizonte** de \(\beta\) inconsistente.  
 - **Proxy** de mercado estrecho.  
 - No **desapalancar/reapalancar** \(\beta\) cuando cambia el **apalancamiento**.
@@ -117,6 +150,8 @@ PV=\sum_{t=1}^{n}\frac{CF_t}{(1+r)^t}.
 **Intuición matemática clave**  
 - La reducción de riesgo proviene de **covarianzas**; **correlación baja/negativa** desplaza la frontera **a la izquierda**.  
 - Con activo sin riesgo surge la **CML**: combinaciones del **risk-free** y la **cartera tangente**.
+
+--
 
 **Errores comunes**  
 - \(\Sigma\) con **pocas observaciones** (inestable).  
@@ -142,6 +177,8 @@ Los precios **reflejan plenamente** la información disponible:
 **Implicaciones**  
 - No hay **estrategias sistemáticas** con **alfa neto** de costos/riesgo bajo la forma correspondiente.  
 - **Eventos públicos** se incorporan **rápido** en precios.
+
+--
 
 **Notas:**  
 - EMH **no** dice que el precio sea “correcto” **siempre**; dice que **no hay reglas replicables** que extraigan rentas con esa info, **ajustada por riesgo y costos**.  
