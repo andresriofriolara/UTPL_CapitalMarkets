@@ -80,7 +80,7 @@ $$
 --
 
 - Si hay **múltiples riesgos**, \(r\) debe ser **consistente con el riesgo de los flujos** (no del emisor) y con **moneda** y **horizonte**.  
-- **Valor temporal vs prima por riesgo:** \(r=R_f+\mathrm{PR}\), con \(R_f\) libre de riesgo en **misma divisa y plazo**.
+- **Valor temporal vs prima por riesgo:** $(r=R_f+\mathrm{PR})$, con $(R_f)$ libre de riesgo en **misma divisa y plazo**.
 
 --
 
@@ -95,13 +95,13 @@ $$
 - WACC con **pesos de mercado**, deuda **post-impuestos** y \(K_e\) por **CAPM** (u otro coherente).  
 - Ajustar riesgo **específico** en **flujos** o con **hurdle rate** documentado (evitar “sumar puntos” sin sustento).
 
-$\mathrm{WACC} = \frac{D}{D+E}\,k_d\,(1-T) + \frac{E}{D+E}\,k_e$
+$\mathrm{WACC} = \frac{D}{D+E}\times k_d\times (1-T) + \frac{E}{D+E}\times k_e$
 
 ---
 
 ## 2.2 · Modelo de valoración de activos financieros (CAPM)
 
-**Ecuación (SML)**
+**Ecuación**
 
 $$
 \mathbb{E}[R_i]=R_f+\beta_i\big(\mathbb{E}[R_M]-R_f\big)
@@ -123,7 +123,7 @@ $$
 1. Inversionistas **media–varianza**.  
 2. **Horizonte único**.  
 3. Mercados **competitivos/sin fricciones**.  
-4. Préstamo/colocación al **\(R_f\)**.  
+4. Préstamo/colocación al **$(R_f)$**.  
 5. **Expectativas homogéneas**.  
 6. **Cartera de mercado invertible**.
 
@@ -137,13 +137,12 @@ $$
 
 **Pitfalls al estimar CAPM**  
 - $(R_f)$ mal elegido (**moneda/plazo**).  
-- **Horizonte** de \(\beta\) inconsistente.  
+- **Horizonte** de $(\beta)$ inconsistente.  
 - **Proxy** de mercado estrecho.  
-- No **desapalancar/reapalancar** \(\beta\) cuando cambia el **apalancamiento**. (Harris & Pringle)
+- No **desapalancar/reapalancar** $(\beta)$ cuando cambia el **apalancamiento**. (Harris & Pringle)
 
 $$
-\beta_{\text{unlevered}}
-= \frac{\beta_{\text{levered}}}{\,1 + \dfrac{\text{Value of Debt}}{\text{Value of Equity}}\,}
+\beta_{\text{unlevered}}=\frac{\beta_{\text{levered}}}{1 + \dfrac{\text{Value of Debt}}{\text{Value of Equity}}\,}
 $$
 
 ---
@@ -182,12 +181,6 @@ $$
 - $(\Sigma)$ con **pocas observaciones** (inestable).  
 - Ignorar **costes** y **restricciones** (no short, límites).  
 - Históricos sin **estabilización** (shrinkage, Bayes, ventanas).
-
---
-
-**Notas:**  
-- Mostrar **error de optimización** (pequeños cambios en \(\Sigma\) → **pesos extremos**).  
-- **Regularización** (ridge/lasso), **restricciones prácticas** y **Ledoit–Wolf** (conceptual).
 
 ---
 
