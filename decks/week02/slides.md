@@ -164,7 +164,9 @@ $$
 **Frontera eficiente**  
 - Carteras que **maximizan** retorno para varianza dada (o **minimizan** varianza para retorno objetivo).
 
-![Frontera Eficiente](./images/markowitz.png)
+<div style="text-align:center">
+  <img src="./images/markowitz.png" alt="Frontera Eficiente" style="max-width:33%; height:auto;" />
+</div>
 
 <small><em>Referencia: Neves, Fábio. 2025. “Plotting Markowitz Efficient Frontier With Python.” <a href="https://towardsdatascience.com/python-markowitz-optimization-b5e1623060f5/" target="_blank" rel="noopener">Towards Data Science</a>. 5 de marzo de 2025.</em></small>
 
