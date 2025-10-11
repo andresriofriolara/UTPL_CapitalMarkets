@@ -40,11 +40,11 @@ Panorama general de la teoría de los mercados financieros
 ---
 
 **Semana 2: Panorama general de la teoría de los mercados financieros**
-- **2.1 Teoría del valor presente y tasa de descuento**
-- **2.2 Modelo de valoración de activos financieros (CAPM)**
-- **2.3 Teoría moderna de portafolio (Markowitz)**
-- **2.4 Mercado de capitales eficiente**
-- **2.5 Instrumentos del mercado de capitales**
+- 2.1 Teoría del valor presente y tasa de descuento
+- 2.2 Modelo de valoración de activos financieros (CAPM)
+- 2.3 Teoría moderna de portafolio (Markowitz)
+- 2.4 Mercado de capitales eficiente
+- 2.5 Instrumentos del mercado de capitales
     - 2.5.1 Clasificación de instrumentos del mercado de capitales.
 
 ---
@@ -61,11 +61,11 @@ ________________________________________________________________________________
 
 Primero recordemos:
 
-$$V_f = V_p \left(1+i\right)^{t}$$
+$$V_f = V_p \left(1+i_t \right)^{t}$$
 
 --
 
-$$V_p = \frac{V_f}{\left(1+i\right)^{t}}$$
+$$V_p = \frac{V_f}{\left(1+i_t \right)^{t}}$$
 
 --
 
@@ -77,6 +77,8 @@ $$
 PV = \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t}.
 $$
 
+--
+
 - Si hay **múltiples riesgos**, \(r\) debe ser **consistente con el riesgo de los flujos** (no del emisor) y con **moneda** y **horizonte**.  
 - **Valor temporal vs prima por riesgo:** \(r=R_f+\mathrm{PR}\), con \(R_f\) libre de riesgo en **misma divisa y plazo**.
 
@@ -86,6 +88,8 @@ $$
 - Descontar **flujos nominales** con **tasa real** (o viceversa).  
 - Mezclar **horizontes** de tasas.  
 - Usar **WACC de la firma** para un **proyecto** con riesgo distinto.
+
+--
 
 **Buenas prácticas (coste de capital)**  
 - WACC con **pesos de mercado**, deuda **post-impuestos** y \(K_e\) por **CAPM** (u otro coherente).  
@@ -98,10 +102,14 @@ $$
 **Ecuación (SML)**
 
 $$
-\mathbb{E}[R_i]=R_f+\beta_i\big(\mathbb{E}[R_M]-R_f\big), \qquad 
+\mathbb{E}[R_i]=R_f+\beta_i\big(\mathbb{E}[R_M]-R_f\big)
+$$
+
+$$
 \beta_i=\frac{\mathrm{Cov}(R_i,R_M)}{\mathrm{Var}(R_M)}.
 $$
 
+--
 
 **Lectura conceptual**  
 - Solo “paga” el riesgo **sistemático**; el **idiosincrático** se **diversifica**.  
@@ -139,11 +147,13 @@ $$
 
 $$
 \begin{aligned}
-\mu_p &= \mathbf{w}^\top \boldsymbol{\mu},\\
-\sigma_p^2 &= \mathbf{w}^\top \Sigma\, \mathbf{w},\\
+\mu_p= \mathbf{w}^\top \boldsymbol{\mu},\\
+\sigma_p^2= \mathbf{w}^\top \Sigma\, \mathbf{w},\\
 \mathbf{1}^\top \mathbf{w} &= 1.
 \end{aligned}
 $$
+
+--
 
 **Frontera eficiente**  
 - Carteras que **maximizan** retorno para varianza dada (o **minimizan** varianza para retorno objetivo).
@@ -160,6 +170,8 @@ $$
 - \(\Sigma\) con **pocas observaciones** (inestable).  
 - Ignorar **costes** y **restricciones** (no short, límites).  
 - Históricos sin **estabilización** (shrinkage, Bayes, ventanas).
+
+--
 
 **Notas:**  
 - Mostrar **error de optimización** (pequeños cambios en \(\Sigma\) → **pesos extremos**).  
@@ -193,9 +205,17 @@ Los precios **reflejan plenamente** la información disponible:
 
 - **Renta variable**: acciones comunes/preferentes; derechos político-económicos; **alto riesgo/volatilidad**.  
 - **Renta fija**: bonos corporativos/estatales, convertibles, papel comercial; riesgos de **tasa, crédito, liquidez**; sensibilidad por **duración** \(D\) y **convexidad**.  
+
+--
+
+## 2.5 · Instrumentos del mercado de capitales (Cont.)
+
 - **Derivados**: opciones, futuros, swaps; valor depende del **subyacente**; **cobertura** y **especulación**.  
 - **Primario vs secundario**: **emisión** vs **negociación**; **liquidez**, **formación de precios**, señal para **nuevas emisiones**.
 
+---
+
+## Discusión del Caso: "Dilema en Reinicke Ostria"
 
 ---
 
