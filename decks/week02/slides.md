@@ -92,7 +92,7 @@ $$
 --
 
 **Buenas prácticas (coste de capital)**  
-- WACC con **pesos de mercado**, deuda **post-impuestos** y \(K_e\) por **CAPM** (u otro coherente).  
+- WACC con **pesos de mercado**, deuda **post-impuestos** y $(K_e)$ por **CAPM** (u otro coherente).  
 - Ajustar riesgo **específico** en **flujos** o con **hurdle rate** documentado (evitar “sumar puntos” sin sustento).
 
 $\mathrm{WACC} = \frac{D}{D+E}\times k_d\times (1-T) + \frac{E}{D+E}\times k_e$
@@ -101,7 +101,7 @@ $\mathrm{WACC} = \frac{D}{D+E}\times k_d\times (1-T) + \frac{E}{D+E}\times k_e$
 
 ## 2.2 · Modelo de valoración de activos financieros (CAPM)
 
-**Ecuación**
+**Ecuación Base**
 
 $$
 \mathbb{E}[R_i]=R_f+\beta_i\big(\mathbb{E}[R_M]-R_f\big)
@@ -221,6 +221,19 @@ Los precios **reflejan plenamente** la información disponible:
 ---
 
 ## Discusión del Caso: "Dilema en Reinicke Ostria"
+
+--
+
+## Contexto de la Empresa
+
+--
+
+## Contexto del Proyecto
+
+--
+
+## Valoración del Proyecto
+
 
 ---
 
