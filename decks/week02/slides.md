@@ -139,10 +139,11 @@ $$
 - $(R_f)$ mal elegido (**moneda/plazo**).  
 - **Horizonte** de \(\beta\) inconsistente.  
 - **Proxy** de mercado estrecho.  
-- No **desapalancar/reapalancar** \(\beta\) cuando cambia el **apalancamiento**.
+- No **desapalancar/reapalancar** \(\beta\) cuando cambia el **apalancamiento**. (Harris & Pringle)
 
 $$
-\beta_e \;=\; \beta_a\!\left[\,1 + (1-T)\,\frac{D}{E}\right]
+\beta_{\text{unlevered}}
+= \frac{\beta_{\text{levered}}}{\,1 + \dfrac{\text{Value of Debt}}{\text{Value of Equity}}\,}
 $$
 
 ---
