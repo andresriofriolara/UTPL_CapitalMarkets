@@ -95,6 +95,8 @@ $$
 - WACC con **pesos de mercado**, deuda **post-impuestos** y \(K_e\) por **CAPM** (u otro coherente).  
 - Ajustar riesgo **específico** en **flujos** o con **hurdle rate** documentado (evitar “sumar puntos” sin sustento).
 
+$\mathrm{WACC} = \frac{D}{D+E}\,k_d\,(1-T) + \frac{E}{D+E}\,k_e$
+
 ---
 
 ## 2.2 · Modelo de valoración de activos financieros (CAPM)
@@ -139,6 +141,10 @@ $$
 - **Proxy** de mercado estrecho.  
 - No **desapalancar/reapalancar** \(\beta\) cuando cambia el **apalancamiento**.
 
+$$
+\beta_e \;=\; \beta_a\!\left[\,1 + (1-T)\,\frac{D}{E}\right]
+$$
+
 ---
 
 ## 2.3 · Teoría moderna de portafolio (Markowitz)
@@ -158,6 +164,11 @@ $$
 **Frontera eficiente**  
 - Carteras que **maximizan** retorno para varianza dada (o **minimizan** varianza para retorno objetivo).
 
+![Frontera Eficiente](./images/markowitz.png)
+
+<small><em>Referencia: Neves, Fábio. 2025. “Plotting Markowitz Efficient Frontier With Python.” <a href="https://towardsdatascience.com/python-markowitz-optimization-b5e1623060f5/" target="_blank" rel="noopener">Towards Data Science</a>. 5 de marzo de 2025.</em></small>
+
+
 --
 
 **Intuición matemática clave**  
@@ -167,7 +178,7 @@ $$
 --
 
 **Errores comunes**  
-- \(\Sigma\) con **pocas observaciones** (inestable).  
+- $(\Sigma)$ con **pocas observaciones** (inestable).  
 - Ignorar **costes** y **restricciones** (no short, límites).  
 - Históricos sin **estabilización** (shrinkage, Bayes, ventanas).
 
