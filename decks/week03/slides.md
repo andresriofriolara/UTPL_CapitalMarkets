@@ -51,11 +51,14 @@ Valoración de empresas: principios y metodologías
 
 --
 
-## 3.1.1 Análisis vertical (composición) — con notas
+## 3.1.1 Análisis vertical (composición)
 - % de cada rubro sobre un **total**.
   - ER: % sobre **Ventas** (márgenes).
   - Balance: % sobre **Activos totales** (estructura).
 - Uso: comparabilidad inter-empresa y cambios de **mix**.
+
+--
+
 - Notas operativas:
   - Estabiliza diferencias de **tamaño**; útil en series propias.
   - Revisar criterios contables (**IFRS/US GAAP**).
@@ -99,7 +102,7 @@ Valoración de empresas: principios y metodologías
 
 --
 
-## 3.1.3.3 Rentabilidad (incl. DuPont)
+## 3.1.3.3 Rentabilidad
 - **Margen neto** = Utilidad Neta / Ventas.
 - **ROA** = Utilidad Neta / Activos; **ROE** = Utilidad Neta / Patrimonio.
 - **DuPont (3 pasos)**: ROE = Margen × Rotación × Apalancamiento.
@@ -123,7 +126,7 @@ Valoración de empresas: principios y metodologías
 --
 
 ## 3.1.4.1 Calificación y prima de riesgo
-- Tasa exigida = **r_f** + **spread** de crédito.
+- Tasa exigida = $r_f$ + **spread** de crédito.
 - Drivers: **rating**, plazo, liquidez, volatilidad sector/país, macro.
 - Escala típica: **AAA–A** (bajo) … **B/CCC** (alto) … **D** (default).
 - Mejor rating ↓ spread ⇒ ↓ **k_d** (después de impuestos) ⇒ ↓ **WACC**.
@@ -135,7 +138,10 @@ Valoración de empresas: principios y metodologías
   1) **Ingresos (DCF/APV)**: FCFF/FCFE → VP de flujos.
   2) **Mercado (relativos)**: múltiplos y transacciones comparables.
   3) **Patrimoniales**: VCA, liquidación, valor sustancial.
-- Triangulación: usar **más de un método**; no promediar mecánicamente.
+
+--
+
+- Triangulación: usar **más de un método**; **no** promediar mecánicamente.
 
 --
 
@@ -148,15 +154,15 @@ Valoración de empresas: principios y metodologías
 --
 
 ## 3.2.1.1 Costo de capital y valor terminal
-- **WACC = (E/(D+E))·k_e + (D/(D+E))·k_d·(1−T)**.
-- **CAPM**: *k_e = r_f + β · EMRP* (β (des)apalancar a estructura objetivo).
+- **WACC** $= (E/(D+E))·k_e + (D/(D+E))·k_d·(1−T)$
+- **CAPM**: $k_e=r_f+/beta /times EMRP$ (β (des)apalancar a estructura objetivo).
 - **TV** explica gran parte del valor; **g** ≤ crecimiento de largo plazo sector/economía.
 - Consistencia operativa: **g ≈ ROIC × tasa de reinversión**.
 
 --
 
 ## 3.2.1.2 Variantes: APV y Capital Cash Flow
-- **APV**: VP flujos (a **k_u**) + VP **escudos** − **costos de distress**.
+- **APV**: VP flujos (a **$k_u$**) + VP **escudos** − **costos de distress**.
 - Útil si el **apalancamiento cambia** materialmente en el tiempo.
 - **Capital Cash Flow (CCF)**: FCFF + escudos, descontado a **k_u**.
 
@@ -206,6 +212,9 @@ Valoración de empresas: principios y metodologías
 - **Valor contable ajustado**: activos/pasivos a **mercado**.
 - **Liquidación**: valor neto en **cierre ordenado**.
 - **Sustancial**: activos netos reales (reposición/uso económico) − pasivo exigible.
+
+--
+
 - Útiles en negocios **asset-heavy** o con flujos **difusos**.
 - Sensibilizar: **márgenes, capex, WACC, g, β, estructura**; usar **rangos**.
 
