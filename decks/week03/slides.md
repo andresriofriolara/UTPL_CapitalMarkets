@@ -1,3 +1,15 @@
+<style>
+/* Local to this file only */
+.reveal .slides section img{
+  display:block;
+  margin:0 auto;          /* center horizontally */
+  max-width:95%;
+  max-height:70vh;        /* keep inside slide height */
+  object-fit:contain;     /* no cropping */
+}
+.reveal .slides h1, .reveal .slides h2{ margin:0 0 .6rem; } /* tighter title spacing */
+</style>
+
 <section class="title-slide">
 Semana 3 | Valoración de empresas: principios y metodologías
 <div class="subtitle">Mercados y Riesgos Financieros • <em>Octubre 22, 2025</em></div>
@@ -178,25 +190,19 @@ Valoración de empresas: principios y metodologías
 
 ## 3.2.2 Múltiplos - Un ejemplo práctico (1/3)
 
-<div style="height:70vh; display:flex; align-items:center; justify-content:center;">
-  <img src="./images/Multiples1.png" alt="Múltiplos (visual)" style="max-width:95%; max-height:95%; object-fit:contain;">
-</div>
+<img src="./images/Multiples1.png" alt="Múltiplos (visual I)">
 
 --
 
 ## 3.2.2 Múltiplos - Un ejemplo práctico (2/3)
 
-<div style="height:70vh; display:flex; align-items:center; justify-content:center;">
-  <img src="./images/Multiples2.png" alt="Múltiplos (visual II)" style="max-width:95%; max-height:95%; object-fit:contain;">
-</div>
+<img src="./images/Multiples2.png" alt="Múltiplos (visual II)">
 
 --
 
 ## 3.2.2 Múltiplos - Un ejemplo práctico (3/3)
 
-<div style="height:70vh; display:flex; align-items:center; justify-content:center;">
-  <img src="./images/Multiples3.png" alt="Múltiplos (visual III)" style="max-width:95%; max-height:95%; object-fit:contain;">
-</div>
+<img src="./images/Multiples3.png" alt="Múltiplos (visual III)">
 
 --
 
