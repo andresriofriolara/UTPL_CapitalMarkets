@@ -167,7 +167,7 @@ Valoración de empresas: principios y metodologías
 
 ## 3.2.1.1 Costo de capital y valor terminal
 - **WACC** $= (E/(D+E))·k_e + (D/(D+E))·k_d·(1−T)$
-- **CAPM**: $k_e=r_f+/beta /times EMRP$ (β (des)apalancar a estructura objetivo).
+- **CAPM**: $k_e=r_f+ /beta /times EMRP$ (β (des)apalancar a estructura objetivo).
 - **TV** explica gran parte del valor; **g** ≤ crecimiento de largo plazo sector/economía.
 - Consistencia operativa: **g ≈ ROIC × tasa de reinversión**.
 
@@ -176,7 +176,7 @@ Valoración de empresas: principios y metodologías
 ## 3.2.1.2 Variantes: APV y Capital Cash Flow
 - **APV**: VP flujos (a **$k_u$**) + VP **escudos** − **costos de distress**.
 - Útil si el **apalancamiento cambia** materialmente en el tiempo.
-- **Capital Cash Flow (CCF)**: FCFF + escudos, descontado a **k_u**.
+- **Capital Cash Flow (CCF)**: FCFF + escudos, descontado a **$k_u$**.
 
 --
 
