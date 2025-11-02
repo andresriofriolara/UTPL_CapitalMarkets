@@ -12,7 +12,7 @@ Semana 5 | Mapeo de Riesgos y VaR
 ---
 
 ## Sobre la Semana Anterior
-- **4.1 Definición de instrumento derivado**
+- **4.1 Definición de instrumentos derivados**
 - **4.2 Mercado de opciones**
     - 4.2.1 Características y participantes en el mercado de opciones
     - 4.2.2 Clasificación de las opciones
@@ -27,7 +27,7 @@ Semana 5 | Mapeo de Riesgos y VaR
 ---
 
 ## Contenido Semana 5
-Introducción y Conceptos Generales
+Mapeo de Riesgos y VaR
 
 - **5.1** Definiciones de Riesgo
 - **5.2** Tipos de Riesgo y Cuantificación
