@@ -51,10 +51,16 @@ Planificación de la estrategia de inversión
 
 ## 6.1.2 Momentum — Medida canónica 12–2 (“skip month”)
 - **Cálculo básico**: retorno acumulado de $t-12$ a $t-2$ **excluyendo** $t-1$ para evitar reversión de muy corto plazo.
-- **Precio**: 
-$\text{Momentum}_{i,t} = \frac{P_{i,t-2}}{P_{i,t-12}} - 1$
-- **Retornos**: 
-$\text{Mom}_{i,t} = \prod_{m=t-12}^{t-2}\big(1+r_{i,m}\big) - 1$
+- **Precio**:
+$$
+\operatorname{Momentum}_{i,t} = \frac{P_{i,t-2}}{P_{i,t-12}} - 1
+$$
+
+- **Retornos**:
+$$
+\operatorname{Mom}_{i,t} = \prod_{m=t-12}^{t-2}\!\bigl(1+r_{i,m}\bigr) - 1
+$$
+
 - **Razonamiento**: excluir $t-1$ reduce ruido de microestructura y micro-reversiones.
 
 --
@@ -88,8 +94,18 @@ $\text{Mom}_{i,t} = \prod_{m=t-12}^{t-2}\big(1+r_{i,m}\big) - 1$
 - **Riesgo clave**: **puntos de giro** (reversiones bruscas) que pueden generar pérdidas rápidas.
 - **Escalamiento por volatilidad (volatility targeting)**:
   - Definición previa: **volatilidad objetivo** $\sigma^\ast$.
+
+--
+
   - Factor de escala y pesos:
-$$s_t = \frac{\sigma^\ast}{\hat{\sigma}_t}, \qquad w_{i,t}^{(\text{scaled})} = s_t\,w_{i,t}$$
+
+$$
+s_t = \frac{\sigma^\ast}{\hat{\sigma}_t}
+$$
+
+$$
+w_{i,t}^{\mathrm{scaled}} = s_t\, w_{i,t}
+$$
 
 --
 
@@ -100,9 +116,19 @@ $$s_t = \frac{\sigma^\ast}{\hat{\sigma}_t}, \qquad w_{i,t}^{(\text{scaled})} = s
 
 ## 6.1.6 Momentum — Timing con promedio móvil de 10 meses
 - **MA10**: promedio móvil de 10 meses (definido antes de usar la sigla MA10).
-- **Regla binaria**:
-$\text{Señal}_t = \mathbb{1}\{P_t - \text{MA}_{10,t} > 0\}$
-$R_{t}^{(\text{estrategia})} = \text{Señal}_t \, R_{t}^{(\text{riesgo})} + \big(1-\text{Señal}_t\big) R_{t}^{(\text{alternativa})}$
+- **Regla binaria** (definimos **MA10** = promedio móvil de 10 meses, **Signal** = indicador 1/0):
+
+$$
+\mathrm{Signal}_t \;=\; \mathbf{1}\!\left\{\, P_t - \operatorname{MA}_{10,t} > 0 \,\right\}
+$$
+
+$$
+R_{t}^{(\mathrm{estr})}
+\;=\;
+\mathrm{Signal}_t \, R_{t}^{(\mathrm{riesgo})}
+\;+\;
+\bigl(1-\mathrm{Signal}_t\bigr)\, R_{t}^{(\mathrm{alt})}
+$$
 
 --
 
@@ -239,14 +265,24 @@ $R_{t}^{(\text{estrategia})} = \text{Señal}_t \, R_{t}^{(\text{riesgo})} + \big
   p^\ast = \frac{(1+r) - d}{u - d}
   $$
 - **Retro–propagación**:
-- $V_{\text{op},t} = \max\left\{ \frac{p^\ast V_{\text{op},t+1}^{\text{up}} + (1-p^\ast) V_{\text{op},t+1}^{\text{down}}}{1+r},\ \text{valor de ejercer/continuar} \right\}$
+$$
+V_{op,t}
+=
+\max\!\left\{
+\frac{\,p\, V_{op,\,t+1}^{up} + (1-p)\, V_{op,\,t+1}^{down}}{1+r}
+\;,\;
+X_t
+\right\}
+$$
 
 --
 
 ## 6.3.4 Opciones Reales — Opción de esperar (ejemplo)
 - **Comparación hoy**: invertir ahora vs. mantener opción de decidir tras observar nueva información.
 - **Valor en $t=0$**:
-- $V_0 = \max\left\{ S_0 - K,\ \frac{p^\ast \max(S_u-K,0) + (1-p^\ast)\max(S_d-K,0)}{1+r} \right\}$
+$$
+V_0 \;=\; \max\!\left\{\, S_0 - K \;,\; \frac{\,p\,\max(S_u - K, 0) + (1-p)\,\max(S_d - K, 0)\,}{1+r} \right\}
+$$
 
 --
 
