@@ -264,6 +264,9 @@ $$
   $$
   p^\ast = \frac{(1+r) - d}{u - d}
   $$
+
+--
+
 - **Retro–propagación**:
 $$
 V_{op,t}
