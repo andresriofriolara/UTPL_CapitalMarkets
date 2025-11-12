@@ -268,17 +268,13 @@ $$
 
 --
 
-<ul><li>Retropropagacion:</li></ul>
+- Retropropagacion:
+<br/>
 
-$$
-V_{op,t}
-=
-\max\!\left(
-\frac{p\,V_{op,t+1}^{up} + (1-p)\,V_{op,t+1}^{down}}{1+r}
-\;,\;
-X_t
-\right)
-$$
+<script type="math/tex; mode=display">
+V_{op,t} = \max\left( \frac{p\,V_{op,t+1}^{up} + (1-p)\,V_{op,t+1}^{down}}{1+r} , X_t \right)
+</script>
+
 
 --
 
