@@ -54,10 +54,12 @@ Planificación de la estrategia de inversión
 
 --
 
-**Precio**  
+- **Precio**  
+
 $$\mathrm{Momentum}_{i,t}=\frac{P_{i,t-2}}{P_{i,t-12}}-1$$
 
-**Retornos**  
+-**Retornos**  
+
 $$\mathrm{Mom}_{i,t}=\prod_{m=t-12}^{t-2}(1+r_{i,m})-1$$
 
 - **Razonamiento**: excluir $t-1$ reduce ruido de microestructura y micro-reversiones.
