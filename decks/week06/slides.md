@@ -52,13 +52,15 @@ Planificación de la estrategia de inversión
 ## 6.1.2 Momentum — Medida canónica 12–2 (“skip month”)
 - **Cálculo básico**: retorno acumulado de $t-12$ a $t-2$ **excluyendo** $t-1$ para evitar reversión de muy corto plazo.
 - **Precio**:
+
 $$
-\operatorname{Momentum}_{i,t} = \frac{P_{i,t-2}}{P_{i,t-12}} - 1
+\mathrm{Momentum}_{i,t} = \dfrac{P_{i,t-2}}{P_{i,t-12}} - 1
 $$
 
 - **Retornos**:
+
 $$
-\operatorname{Mom}_{i,t} = \prod_{m=t-12}^{t-2}\!\bigl(1+r_{i,m}\bigr) - 1
+\mathrm{Mom}_{i,t} = \prod_{m=t-12}^{t-2} (1 + r_{i,m}) - 1
 $$
 
 - **Razonamiento**: excluir $t-1$ reduce ruido de microestructura y micro-reversiones.
@@ -115,20 +117,22 @@ $$
 --
 
 ## 6.1.6 Momentum — Timing con promedio móvil de 10 meses
-- **MA10**: promedio móvil de 10 meses (definido antes de usar la sigla MA10).
-- **Regla binaria** (definimos **MA10** = promedio móvil de 10 meses, **Signal** = indicador 1/0):
+
+- **MA10**: definimos $M_{10,t}$ = promedio móvil de 10 meses; $Signal_t$ = indicador (1/0);
+  $R_t^{(r)}$ = retorno del activo riesgoso; $R_t^{(a)}$ = retorno de la alternativa.
+
+- **Regla binaria**:
 
 $$
-\mathrm{Signal}_t \;=\; \mathbf{1}\!\left\{\, P_t - \operatorname{MA}_{10,t} > 0 \,\right\}
+Signal_t = I\{\, P_t - M_{10,t} > 0 \,\}
 $$
 
+- **Retorno de la estrategia**:
+
 $$
-R_{t}^{(\mathrm{estr})}
-\;=\;
-\mathrm{Signal}_t \, R_{t}^{(\mathrm{riesgo})}
-\;+\;
-\bigl(1-\mathrm{Signal}_t\bigr)\, R_{t}^{(\mathrm{alt})}
+R_t^{(s)} = Signal_t \, R_t^{(r)} + \big(1 - Signal_t\big)\, R_t^{(a)}
 $$
+
 
 --
 
@@ -267,24 +271,30 @@ $$
 
 --
 
-- **Retro–propagación**:
-$$
-V_{op,t}
-=
-\max\!\left\{
-\frac{\,p\, V_{op,\,t+1}^{up} + (1-p)\, V_{op,\,t+1}^{down}}{1+r}
-\;,\;
-X_t
-\right\}
-$$
+- Retropropagacion:
+
+    $$
+    V_{op,t}
+    =
+    \max\!\left\{
+    \frac{p\, V_{op,\,t+1}^{up} + (1-p)\, V_{op,\,t+1}^{down}}{1+r}
+    \;,\;
+    X_t
+    \right\}
+    $$
 
 --
 
 ## 6.3.4 Opciones Reales — Opción de esperar (ejemplo)
 - **Comparación hoy**: invertir ahora vs. mantener opción de decidir tras observar nueva información.
-- **Valor en $t=0$**:
+**Valor en t=0**
+
 $$
-V_0 \;=\; \max\!\left\{\, S_0 - K \;,\; \frac{\,p\,\max(S_u - K, 0) + (1-p)\,\max(S_d - K, 0)\,}{1+r} \right\}
+C_0 = \frac{p\,\max(S_u-K,0) + (1-p)\,\max(S_d-K,0)}{1+r}
+$$
+
+$$
+V_0 = \max\{\, S_0 - K \;,\; C_0 \,\}
 $$
 
 --
@@ -368,17 +378,16 @@ $V_{t} = \max\left\{ A,\ \frac{p^\ast V_{t+1}^{\text{up}} + (1-p^\ast) V_{t+1}^{
 ## 6.4.4 Estructura de Capital — Función Objetivo
 
 <section data-background-color="transparent">
-  <h2>Mapa (Miro)</h2>
-  <div style="display:flex; align-items:center; justify-content:center; height:70vh;">
-    <iframe
-      width="768"
-      height="432"
-      src="https://miro.com/app/live-embed/uXjVJsV66RI=/?embedMode=view_only_without_ui&moveToViewport=-508,-514,1208,822&embedId=1876356640"
-      frameborder="0"
-      scrolling="no"
-      allow="fullscreen; clipboard-read; clipboard-write"
-      allowfullscreen>
-    </iframe>
+  <div style="display:flex; align-items:center; justify-content:center; height:75vh;">
+    <div style="position:relative; width:min(92vw, 1100px); max-height:75vh; aspect-ratio:16/9;">
+      <iframe
+        src="https://miro.com/app/live-embed/uXjVJsV66RI=/?embedMode=view_only_without_ui&moveToViewport=-508,-514,1208,822&embedId=1876356640"
+        style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+        scrolling="no"
+        allow="fullscreen; clipboard-read; clipboard-write"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 </section>
 
@@ -391,14 +400,7 @@ $V_{t} = \max\left\{ A,\ \frac{p^\ast V_{t+1}^{\text{up}} + (1-p^\ast) V_{t+1}^{
 ## 6.5.1 M&A — No son una receta mágica
 
 <section data-background-color="transparent">
-  <h2>Adquisiciones — Esquema</h2>
-  <div style="display:flex; align-items:center; justify-content:center; height:75vh;">
-    <img
-      src="images/adquisiciones4.png"
-      alt="Esquema de adquisiciones"
-      style="max-width:95%; max-height:100%; object-fit:contain; display:block;"
-    />
-  </div>
+  <img src="images/adquisiciones4.png" alt="Esquema de adquisiciones" class="r-stretch" />
 </section>
 
 
@@ -407,42 +409,27 @@ $V_{t} = \max\left\{ A,\ \frac{p^\ast V_{t+1}^{\text{up}} + (1-p^\ast) V_{t+1}^{
 ## 6.5.2 M&A — Un análisis por fases
 
 <section data-background-color="transparent">
-  <div style="display:flex; align-items:center; justify-content:center; height:75vh;">
-    <img
-      src="images/adquisiciones1.png"
-      alt="Esquema de adquisiciones"
-      style="max-width:95%; max-height:100%; object-fit:contain; display:block;"
-    />
-  </div>
+  <img src="images/adquisiciones1.png" alt="Esquema de adquisiciones" class="r-stretch" />
 </section>
+
 
 --
 
 ## 6.5.3 M&A — Fase 1
 
 <section data-background-color="transparent">
-  <div style="display:flex; align-items:center; justify-content:center; height:75vh;">
-    <img
-      src="images/adquisiciones2.png"
-      alt="Esquema de adquisiciones"
-      style="max-width:95%; max-height:100%; object-fit:contain; display:block;"
-    />
-  </div>
+  <img src="images/adquisiciones2.png" alt="Esquema de adquisiciones" class="r-stretch" />
 </section>
+
 
 --
 
 ## 6.5.4 M&A — Fase 2
 
 <section data-background-color="transparent">
-  <div style="display:flex; align-items:center; justify-content:center; height:75vh;">
-    <img
-      src="images/adquisiciones3.png"
-      alt="Esquema de adquisiciones"
-      style="max-width:95%; max-height:100%; object-fit:contain; display:block;"
-    />
-  </div>
+  <img src="images/adquisiciones3.png" alt="Esquema de adquisiciones" class="r-stretch" />
 </section>
+
 
 ---
 
