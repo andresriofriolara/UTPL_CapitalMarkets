@@ -39,6 +39,9 @@ Planificación de la estrategia de inversión
 ## 6.1.1 Momentum — ¿Qué es y por qué existe?
 - **Momentum**: regularidad empírica donde ganadores recientes tienden a seguir ganando y perdedores a seguir perdiendo en el corto/mediano plazo.
 - **Horizontes típicos**: 3–12 meses; se observa en varias clases de activos y regiones.
+
+--
+
 - **Posibles causas**: 
   - Riesgo sistemático (factores no diversificables correlacionados con “ganadores”).
   - Ineficiencias conductuales (sobre/infra-reacción, extrapolación, atención limitada).
@@ -48,21 +51,18 @@ Planificación de la estrategia de inversión
 
 ## 6.1.2 Momentum — Medida canónica 12–2 (“skip month”)
 - **Cálculo básico**: retorno acumulado de $t-12$ a $t-2$ **excluyendo** $t-1$ para evitar reversión de muy corto plazo.
-- **Precio**: 
-  $$
-  \text{Momentum}_{i,t} = \frac{P_{i,t-2}}{P_{i,t-12}} - 1
-  $$
-- **Retornos**:
-  $$
-  \text{Mom}_{i,t} = \prod_{m=t-12}^{t-2}\big(1+r_{i,m}\big) - 1
-  $$
+- **Precio**: $\text{Momentum}_{i,t} = \frac{P_{i,t-2}}{P_{i,t-12}} - 1$
+- **Retornos**: $\text{Mom}_{i,t} = \prod_{m=t-12}^{t-2}\big(1+r_{i,m}\big) - 1$
 - **Razonamiento**: excluir $t-1$ reduce ruido de microestructura y micro-reversiones.
 
 --
 
 ## 6.1.3 Momentum — Cartera long–short por ranking
-- **Definición de “long–short”**: posición **larga** en ganadores y **corta** en perdedores, construida tras ordenar por $\text{Mom}_{i,t}$.
+- **Definición de “long–short”**: posición **larga** en ganadores y **corta** en perdedores, construida tras ordenar por $\text{Moment}_{i,t}$.
 - **Implementación típica**: deciles (Q1 perdedores, Q10 ganadores), rebalanceo mensual.
+
+--
+
 - **Rendimiento de la estrategia**:
   $$
   R_{LS,t} = \frac{1}{N_W}\sum_{i\in W} R_{i,t} - \frac{1}{N_L}\sum_{j\in L} R_{j,t}
@@ -74,6 +74,9 @@ Planificación de la estrategia de inversión
 ## 6.1.4 Momentum — Neutralización y ejecución global
 - **Neutralización sectorial**: formar ganadores/perdedores **intra–industria** para evitar apuestas sectoriales indeseadas.
 - **Agregación por región/país**: reducir concentración y dependencias de un único mercado.
+
+--
+
 - **Rebalanceo mensual disciplinado**: mantener exposición al factor “puro”.
 - **Filtros previos**: excluir activos con baja **liquidez** (definida previamente) o altos costos de transacción.
 
@@ -84,9 +87,10 @@ Planificación de la estrategia de inversión
 - **Escalamiento por volatilidad (volatility targeting)**:
   - Definición previa: **volatilidad objetivo** $\sigma^\ast$.
   - Factor de escala y pesos:
-    $$
-    s_t = \frac{\sigma^\ast}{\hat{\sigma}_t}, \qquad w_{i,t}^{(\text{scaled})} = s_t\,w_{i,t}
-    $$
+$$s_t = \frac{\sigma^\ast}{\hat{\sigma}_t}, \qquad w_{i,t}^{(\text{scaled})} = s_t\,w_{i,t}$$
+
+--
+
 - **Límites de exposición**: por activo/sector/región.
 - **Reglas de salida**: disparadores ante señales robustas de reversión (por ejemplo, quiebres de tendencia confirmados).
 
@@ -95,12 +99,15 @@ Planificación de la estrategia de inversión
 ## 6.1.6 Momentum — Timing con promedio móvil de 10 meses
 - **MA10**: promedio móvil de 10 meses (definido antes de usar la sigla MA10).
 - **Regla binaria**:
-  $$
-  \text{Señal}_t = \mathbb{1}\{P_t - \text{MA}_{10,t} > 0\}
-  $$
-  $$
-  R_{t}^{(\text{estrategia})} = \text{Señal}_t \, R_{t}^{(\text{riesgo})} + \big(1-\text{Señal}_t\big) R_{t}^{(\text{alternativa})}
-  $$
+$$
+\text{Señal}_t = \mathbb{1}\{P_t - \text{MA}_{10,t} > 0\}
+$$
+$$
+R_{t}^{(\text{estrategia})} = \text{Señal}_t \, R_{t}^{(\text{riesgo})} + \big(1-\text{Señal}_t\big) R_{t}^{(\text{alternativa})}
+$$
+
+--
+
 - **Intuición**: recorta drawdowns en grandes mercados bajistas, con costo potencial de “llegar tarde” a reentradas.
 - **Uso**: como overlay defensivo sobre índices amplios o patas largas de momentum.
 
@@ -109,6 +116,9 @@ Planificación de la estrategia de inversión
 ## 6.1.7 Momentum — Síntesis y multifactor
 - **Buenas prácticas**: 12–2 “skip month”, neutralización sectorial, rebalanceo mensual, **volatility targeting**, filtros de liquidez.
 - **Combinación multifactor**: emparejar con **valor** (definido más adelante) y **calidad** para diversificar fuentes de retorno.
+
+--
+
 - **Objetivo**: suavizar trayectoria de retornos y mejorar métricas como el **ratio de información** (definido previamente como exceso de retorno activo dividido por tracking error).
 
 ---
@@ -127,11 +137,17 @@ Planificación de la estrategia de inversión
 
 ## 6.2.2 Valor — Múltiplos y DCF
 - **Múltiplos**: anclar un **múltiplo objetivo** a una métrica esperada.
-  - Ejemplos: **P/E** (precio/utilidad), **P/B** (precio/valor libro), **EV/EBITDA** (valor empresa/EBITDA); cada sigla se define en su primera mención.
+  - Ejemplos: 
+    - **P/E** (precio/utilidad)
+    - **P/B** (precio/valor libro)
+    - **EV/EBITDA** (valor empresa/EBITDA); cada sigla se define en su primera mención.
   - Fórmula genérica:
     $$
     \text{Valor} = \text{Métrica Esperada} \times \text{Múltiplo Objetivo}
     $$
+
+--
+
 - **DCF** (Descuento de Flujos de Caja): 
   $$
   \text{VAN} = \sum_{t=1}^{T}\frac{FCF_t}{(1+WACC)^t} + \frac{TV}{(1+WACC)^T} - \text{Inversión Inicial}
@@ -145,6 +161,9 @@ Planificación de la estrategia de inversión
 ## 6.2.3 Valor — Identificación de "gangas" y comparables
 - **Screening inicial**: múltiplos bajos **ajustados por calidad** (rentabilidad sostenible, estabilidad de márgenes) y ciclo.
 - **Comparables intra–industria**: controlar diferencias en crecimiento, estructura de capital y riesgo.
+
+--
+
 - **Gobernanza**: priorizar juntas y estructuras de incentivos que protejan minoritarios.
 - **Liquidez**: confirmar capacidad de implementar y deshacer posiciones sin costos excesivos.
 
@@ -157,6 +176,9 @@ Planificación de la estrategia de inversión
     $$
     \text{MOS} = 1 - \frac{\text{Precio}}{\text{Valor}} = 1 - \frac{50}{75} = 33.3\%
     $$
+
+--
+
 - **Catalizadores**: mejora de márgenes, desalavancamiento, rotación sectorial, cambios regulatorios favorables.
 - **Disciplina de venta**: convergencia a valor, deterioro de fundamentales, mejor alternativa interna.
 
@@ -165,6 +187,9 @@ Planificación de la estrategia de inversión
 ## 6.2.5 Valor — Integración con otros factores
 - **Con calidad**: filtrar trampas de valor con métricas de rentabilidad (ROIC, márgenes).
 - **Con momentum**: evitar persistencia de infravaloración; priorizar valores con señal de precio favorable.
+
+--
+
 - **Concentración**: límites por emisor/industria/país; evaluar correlaciones para no apilar riesgos.
 - **Objetivo**: mejorar el perfil **riesgo–retorno** (por ejemplo, elevar el **ratio de información**).
 
@@ -177,6 +202,9 @@ Planificación de la estrategia de inversión
 ## 6.3.1 Opciones Reales — Motivación
 - **Limitación del DCF**: valora rutas fijas y no reconoce **flexibilidad gerencial** (derechos de esperar, expandir, contraer, abandonar).
 - **Opción real**: derecho (no obligación) sobre decisiones del proyecto; análogo a una opción financiera.
+
+--
+
 - **Valor bajo incertidumbre**: mayor volatilidad y capacidad de decisión aumentan el valor de esperar.
 - **Meta**: comparar **proyecto con flexibilidad** vs. **proyecto sin flexibilidad**.
 
@@ -187,6 +215,9 @@ Planificación de la estrategia de inversión
   1) **Incertidumbre** futura relevante.
   2) **Decisión adaptativa** disponible para la gerencia.
   3) **Payoff no lineal** que preserve el upside y limite downside.
+
+--
+
 - **Interpretación**: aún con $\text{VAN}\approx 0$, puede convenir **posponer** si la información futura mejora la decisión.
 - **Caso típico**: industrias con ciclos largos, disrupción tecnológica y marcos regulatorios cambiantes.
 
@@ -198,6 +229,9 @@ Planificación de la estrategia de inversión
   - $K$: costo de invertir/expandir (precio de ejercicio).
   - $\sigma$: volatilidad del valor del proyecto.
   - $r$: tasa libre de riesgo; $T$: horizonte de decisión.
+
+--
+
 - **Árbol binomial**: $S \to (uS, dS)$ con $u>1>d$.
 - **Probabilidad neutral al riesgo**:
   $$
@@ -213,9 +247,12 @@ Planificación de la estrategia de inversión
 ## 6.3.4 Opciones Reales — Opción de esperar (ejemplo)
 - **Comparación hoy**: invertir ahora vs. mantener opción de decidir tras observar nueva información.
 - **Valor en $t=0$**:
-  $$
-  V_0 = \max\left\{ S_0 - K,\ \frac{p^\ast \max(S_u-K,0) + (1-p^\ast)\max(S_d-K,0)}{1+r} \right\}
-  $$
+$$
+V_0 = \max\left\{ S_0 - K,\ \frac{p^\ast \max(S_u-K,0) + (1-p^\ast)\max(S_d-K,0)}{1+r} \right\}
+$$
+
+--
+
 - **Intuición**: con $\sigma$ alta (rango amplio entre $u$ y $d$), esperar suele dominar porque preserva el upside y limita pérdidas.
 - **Regla**: ejercer cuando el valor intrínseco supera el valor esperado de continuar.
 
@@ -224,10 +261,13 @@ Planificación de la estrategia de inversión
 ## 6.3.5 Opciones Reales — Expandir, contraer, abandonar, switch
 - **Expandir (call)**: ejercer si el valor incremental supera el costo de expansión.
 - **Contraer (put parcial)**: reducir escala para mejorar perfil riesgo–retorno.
+
+--
+
 - **Abandonar (put con rescate $A$)**:
-  $$
-  V_{t} = \max\left\{ A,\ \frac{p^\ast V_{t+1}^{\text{up}} + (1-p^\ast) V_{t+1}^{\text{down}}}{1+r} \right\}
-  $$
+$$
+V_{t} = \max\left\{ A,\ \frac{p^\ast V_{t+1}^{\text{up}} + (1-p^\ast) V_{t+1}^{\text{down}}}{1+r} \right\}
+$$
 - **Switch**: cambiar tecnología o insumos; modelar como opción compuesta con payoff dependiente del costo de transición.
 
 --
@@ -236,6 +276,9 @@ Planificación de la estrategia de inversión
 - **Paso 1**: estimar **VAN (DCF)** realista sin flexibilidad.
 - **Paso 2**: identificar **fuentes de flexibilidad** y parametrizar $(S,K,\sigma,r,T)$.
 - **Paso 3**: valorar vía **binomial** o fórmulas cerradas (si aplican), alternativa multiples flujos con sensibilidades y precios de ejecución especificos.
+
+--
+
 - **Paso 4**: comparar **con vs. sin** opción real.
 - **Decisión**: invertir ya, rediseñar, **esperar** o abandonar según valor económico y restricciones operativas.
 
@@ -251,6 +294,9 @@ Planificación de la estrategia de inversión
   r_E = R_f + \beta_E (R_M - R_f)
   $$
   - $r_E$: costo del equity; $R_f$: tasa libre de riesgo; $R_M$: rendimiento del mercado; $\beta_E$: sensibilidad del equity.
+
+--
+
 - **WACC** (Weighted Average Cost of Capital, definido aquí):
   $$
   \text{WACC} = \frac{E}{D+E} r_E + \frac{D}{D+E} r_D (1-\tau)
@@ -265,6 +311,9 @@ Planificación de la estrategia de inversión
   $$
   \text{APV} = \text{VAN}_{\text{sin deuda}} + \text{PV(Escudo Fiscal)} - \text{PV(Costos de Dificultad/Agencia)}
   $$
+
+--
+
 - **Trade-off**: escudo fiscal vs. costos esperados de dificultades financieras y fricciones de agencia.
 - **Herramientas**: plazo y covenants de deuda, estructura de incentivos, políticas de dividendos.
 - **Criterio**: minimizar WACC o maximizar APV sujeto a restricciones de resiliencia.
@@ -274,6 +323,9 @@ Planificación de la estrategia de inversión
 ## 6.4.3 Estructura de Capital — Contexto de mercados emergentes
 - **Plazos**: alinear vencimientos con vida de activos para reducir riesgo de refinanciación.
 - **Moneda**: gestionar descalces (ingresos vs. deuda) para mitigar riesgo cambiario.
+
+--
+
 - **Amortiguadores**: liquidez y líneas comprometidas; métricas (interés/EBIT, deuda/EBITDA).
 - **Decisión emisión**: comparar costo marginal de fondos y efectos de control/propiedad.
 
