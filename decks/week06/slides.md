@@ -51,17 +51,21 @@ Planificación de la estrategia de inversión
 
 ## 6.1.2 Momentum — Medida canónica 12–2 (“skip month”)
 - **Cálculo básico**: retorno acumulado de $t-12$ a $t-2$ **excluyendo** $t-1$ para evitar reversión de muy corto plazo.
-- **Precio**:
+
+--
+
+**Precio**
 
 $$
-\mathrm{Momentum}_{i,t} = \dfrac{P_{i,t-2}}{P_{i,t-12}} - 1
+\mathrm{Momentum}_{i,t} = \frac{P_{i,t-2}}{P_{i,t-12}} - 1
 $$
 
-- **Retornos**:
+**Retornos**
 
 $$
 \mathrm{Mom}_{i,t} = \prod_{m=t-12}^{t-2} (1 + r_{i,m}) - 1
 $$
+
 
 - **Razonamiento**: excluir $t-1$ reduce ruido de microestructura y micro-reversiones.
 
@@ -271,17 +275,17 @@ $$
 
 --
 
-- Retropropagacion:
+**Retropropagacion**
 
-    $$
-    V_{op,t}
-    =
-    \max\!\left\{
-    \frac{p\, V_{op,\,t+1}^{up} + (1-p)\, V_{op,\,t+1}^{down}}{1+r}
-    \;,\;
-    X_t
-    \right\}
-    $$
+$$
+V_{op,t}
+=
+\max\!\left(
+\frac{p\,V_{op,t+1}^{up} + (1-p)\,V_{op,t+1}^{down}}{1+r}
+\;,\;
+X_t
+\right)
+$$
 
 --
 
