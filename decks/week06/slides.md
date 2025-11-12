@@ -55,10 +55,10 @@ Planificación de la estrategia de inversión
 --
 
 **Precio**  
-$$\\mathrm{Momentum}_{i,t}=\\frac{P_{i,t-2}}{P_{i,t-12}}-1$$
+$$\mathrm{Momentum}_{i,t}=\frac{P_{i,t-2}}{P_{i,t-12}}-1$$
 
 **Retornos**  
-$$\\mathrm{Mom}_{i,t}=\\prod_{m=t-12}^{t-2}(1+r_{i,m})-1$$
+$$\mathrm{Mom}_{i,t}=\prod_{m=t-12}^{t-2}(1+r_{i,m})-1$$
 
 - **Razonamiento**: excluir $t-1$ reduce ruido de microestructura y micro-reversiones.
 
@@ -117,6 +117,8 @@ $$
 
 - **MA10**: definimos $M_{10,t}$ = promedio móvil de 10 meses; $Signal_t$ = indicador (1/0);
   $R_t^{(r)}$ = retorno del activo riesgoso; $R_t^{(a)}$ = retorno de la alternativa.
+
+--
 
 - **Regla binaria**:
 
