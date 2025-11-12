@@ -51,8 +51,10 @@ Planificación de la estrategia de inversión
 
 ## 6.1.2 Momentum — Medida canónica 12–2 (“skip month”)
 - **Cálculo básico**: retorno acumulado de $t-12$ a $t-2$ **excluyendo** $t-1$ para evitar reversión de muy corto plazo.
-- **Precio**: $\text{Momentum}_{i,t} = \frac{P_{i,t-2}}{P_{i,t-12}} - 1$
-- **Retornos**: $\text{Mom}_{i,t} = \prod_{m=t-12}^{t-2}\big(1+r_{i,m}\big) - 1$
+- **Precio**: 
+$\text{Momentum}_{i,t} = \frac{P_{i,t-2}}{P_{i,t-12}} - 1$
+- **Retornos**: 
+$\text{Mom}_{i,t} = \prod_{m=t-12}^{t-2}\big(1+r_{i,m}\big) - 1$
 - **Razonamiento**: excluir $t-1$ reduce ruido de microestructura y micro-reversiones.
 
 --
@@ -99,12 +101,8 @@ $$s_t = \frac{\sigma^\ast}{\hat{\sigma}_t}, \qquad w_{i,t}^{(\text{scaled})} = s
 ## 6.1.6 Momentum — Timing con promedio móvil de 10 meses
 - **MA10**: promedio móvil de 10 meses (definido antes de usar la sigla MA10).
 - **Regla binaria**:
-$$
-\text{Señal}_t = \mathbb{1}\{P_t - \text{MA}_{10,t} > 0\}
-$$
-$$
-R_{t}^{(\text{estrategia})} = \text{Señal}_t \, R_{t}^{(\text{riesgo})} + \big(1-\text{Señal}_t\big) R_{t}^{(\text{alternativa})}
-$$
+$\text{Señal}_t = \mathbb{1}\{P_t - \text{MA}_{10,t} > 0\}$
+$R_{t}^{(\text{estrategia})} = \text{Señal}_t \, R_{t}^{(\text{riesgo})} + \big(1-\text{Señal}_t\big) R_{t}^{(\text{alternativa})}$
 
 --
 
@@ -140,7 +138,10 @@ $$
   - Ejemplos: 
     - **P/E** (precio/utilidad)
     - **P/B** (precio/valor libro)
-    - **EV/EBITDA** (valor empresa/EBITDA); cada sigla se define en su primera mención.
+    - **EV/EBITDA** (valor empresa/EBITDA) cada sigla se define en su primera mención.
+
+--
+  
   - Fórmula genérica:
     $$
     \text{Valor} = \text{Métrica Esperada} \times \text{Múltiplo Objetivo}
@@ -238,18 +239,14 @@ $$
   p^\ast = \frac{(1+r) - d}{u - d}
   $$
 - **Retro–propagación**:
-  $$
-  V_{\text{op},t} = \max\left\{ \frac{p^\ast V_{\text{op},t+1}^{\text{up}} + (1-p^\ast) V_{\text{op},t+1}^{\text{down}}}{1+r},\ \text{valor de ejercer/continuar} \right\}
-  $$
+- $V_{\text{op},t} = \max\left\{ \frac{p^\ast V_{\text{op},t+1}^{\text{up}} + (1-p^\ast) V_{\text{op},t+1}^{\text{down}}}{1+r},\ \text{valor de ejercer/continuar} \right\}$
 
 --
 
 ## 6.3.4 Opciones Reales — Opción de esperar (ejemplo)
 - **Comparación hoy**: invertir ahora vs. mantener opción de decidir tras observar nueva información.
 - **Valor en $t=0$**:
-$$
-V_0 = \max\left\{ S_0 - K,\ \frac{p^\ast \max(S_u-K,0) + (1-p^\ast)\max(S_d-K,0)}{1+r} \right\}
-$$
+- $V_0 = \max\left\{ S_0 - K,\ \frac{p^\ast \max(S_u-K,0) + (1-p^\ast)\max(S_d-K,0)}{1+r} \right\}$
 
 --
 
@@ -265,9 +262,7 @@ $$
 --
 
 - **Abandonar (put con rescate $A$)**:
-$$
-V_{t} = \max\left\{ A,\ \frac{p^\ast V_{t+1}^{\text{up}} + (1-p^\ast) V_{t+1}^{\text{down}}}{1+r} \right\}
-$$
+$V_{t} = \max\left\{ A,\ \frac{p^\ast V_{t+1}^{\text{up}} + (1-p^\ast) V_{t+1}^{\text{down}}}{1+r} \right\}$
 - **Switch**: cambiar tecnología o insumos; modelar como opción compuesta con payoff dependiente del costo de transición.
 
 --
@@ -373,7 +368,6 @@ $$
 ## 6.5.2 M&A — Un análisis por fases
 
 <section data-background-color="transparent">
-  <h2>Adquisiciones — Esquema</h2>
   <div style="display:flex; align-items:center; justify-content:center; height:75vh;">
     <img
       src="images/adquisiciones1.png"
@@ -388,7 +382,6 @@ $$
 ## 6.5.3 M&A — Fase 1
 
 <section data-background-color="transparent">
-  <h2>Adquisiciones — Esquema</h2>
   <div style="display:flex; align-items:center; justify-content:center; height:75vh;">
     <img
       src="images/adquisiciones2.png"
@@ -403,7 +396,6 @@ $$
 ## 6.5.4 M&A — Fase 2
 
 <section data-background-color="transparent">
-  <h2>Adquisiciones — Esquema</h2>
   <div style="display:flex; align-items:center; justify-content:center; height:75vh;">
     <img
       src="images/adquisiciones3.png"
