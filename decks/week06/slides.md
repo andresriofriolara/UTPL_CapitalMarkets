@@ -54,13 +54,15 @@ Planificación de la estrategia de inversión
 
 --
 
-- **Precio**  
+**Precio**  
 
-$$\mathrm{Momentum}_{i,t}=\frac{P_{i,t-2}}{P_{i,t-12}}-1$$
+$$Momentum_{i,t}=\frac{P_{i,t-2}}{P_{i,t-12}}-1$$
 
--**Retornos**  
+--
 
-$$\mathrm{Mom}_{i,t}=\prod_{m=t-12}^{t-2}(1+r_{i,m})-1$$
+**Retornos**  
+
+$$Mom_{i,t}=\prod_{m=t-12}^{t-2}\!\big(1+r_{i,m}\big)-1$$
 
 - **Razonamiento**: excluir $t-1$ reduce ruido de microestructura y micro-reversiones.
 
@@ -272,13 +274,9 @@ $$
 
 --
 
-- Retropropagacion:
-<br/>
+**Retropropagacion**  
 
-<script type="math/tex; mode=display">
-V_{op,t} = \max\left( \frac{p\,V_{op,t+1}^{up} + (1-p)\,V_{op,t+1}^{down}}{1+r} , X_t \right)
-</script>
-
+$$V_{op,t}=\max\!\left(\frac{p\,V_{op,t+1}^{up}+(1-p)\,V_{op,t+1}^{down}}{1+r},\;X_t\right)$$
 
 --
 
