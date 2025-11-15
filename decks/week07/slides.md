@@ -68,12 +68,12 @@ Planeación financiera a largo plazo
 --
 
 - Ventas proyectadas:
-  $$\text{Ventas}_1 = \text{Ventas}_0 \cdot (1 + g_{\text{ventas}}).$$
+  $$\text{Ventas}_1 = \text{Ventas}_0 \cdot (1 + g_{\text{ventas}})$$
+
+--
+
 - Partida ligada a ventas (por ejemplo inventarios):
   $$\text{Inventarios}_1 = \text{Inventarios}_0 \cdot \frac{\text{Ventas}_1}{\text{Ventas}_0}.$$
-- Uso:
-  - Construir estados pro forma.
-  - Estimar **necesidades adicionales de financiamiento**.
 
 --
 
@@ -89,18 +89,20 @@ Planeación financiera a largo plazo
 ## Modelo DuPont del $ROE$
 
 - El **modelo DuPont** descompone el $ROE$ en tres factores:
-  $$ROE
-  = \frac{\text{Utilidad Neta}{\text{Ventas}}
-    \times \frac{\text{Ventas}}{\text{Activos Totales}}
-    \times \frac{\text{Activos Totales}}{\text{Capital Contable}}.$$
+  $$ROE = \frac{\text{Utilidad Neta}{\text{Ventas}} \times \frac{\text{Ventas}}{\text{Activos Totales}} \times \frac{\text{Activos Totales}}{\text{Capital Contable}}$$
 
 --
 
 - Términos:
   - $\dfrac{\text{Utilidad Neta}{\text{Ventas}}$:
     - **Margen neto** (rentabilidad de las ventas).
+
+--
+
   - $\dfrac{\text{Ventas}}{\text{Activos Totales}}$:
     - **Rotación de activos** (eficiencia en el uso de activos).
+--
+
   - $\dfrac{\text{Activos Totales}}{\text{Capital Contable}}$:
     - **Multiplicador de capital** (apalancamiento financiero).
 
@@ -133,6 +135,9 @@ Planeación financiera a largo plazo
 
 - El **crecimiento sostenible** $g^\*$ viene dado por:
   $$g^\* = \frac{ROE \cdot RR}{1 - ROE \cdot RR}.$$
+
+--
+
 - Interpretación:
   - $ROE \cdot RR$ representa la proporción del **capital contable** que se incrementa
     cada periodo gracias a las **utilidades retenidas**.
@@ -173,6 +178,9 @@ Planeación financiera a largo plazo
 - La planeación de largo plazo no se hace con un solo escenario:
   - **Escenario base**:
     - Supuestos considerados más probables.
+
+--
+
   - **Escenario pesimista**:
     - Menores ventas, mayores costos, menor margen, menor $ROE$.
   - **Escenario optimista**:
@@ -236,6 +244,9 @@ Planeación financiera a largo plazo
 - La **volatilidad histórica** se mide como la **desviación estándar muestral** de
   los rendimientos:
   $$\sigma = \sqrt{\frac{\sum_{i=1}^n (R_i - \bar R)^2}{n - 1}}.$$
+
+--
+
 - Donde:
   - $R_i$: rendimiento en el periodo $i$.
   - $\bar R$: media de los rendimientos.
@@ -270,6 +281,9 @@ Planeación financiera a largo plazo
 - Si los rendimientos diarios son aproximadamente independientes y con distribución similar,
   se puede aproximar la **volatilidad anual** como:
   $$\sigma_{\text{anual}} \approx \sigma_{\text{diaria}} \cdot \sqrt{N},$$
+ 
+--
+
   donde:
   - $\sigma_{\text{diaria}}$: volatilidad medida con rendimientos diarios.
   - $N$: número de días de mercado en el año (frecuentemente $N = 252$).
@@ -408,7 +422,13 @@ Planeación financiera a largo plazo
 --
 
 - Valor en Riesgo al 95\,\% estimado por Monte Carlo:
-  $$\text{VaR}_{95\%}^{\text{MC}} \approx Q_{0.95}(L_1, L_2, \dots, L_N),$$
+
+--
+
+  $$\text{VaR}_{95\%}^{\text{MC}} \approx Q_{0.95}(L_1, L_2, \dots, L_N)$$
+
+--
+
   donde $Q_{0.95}$ denota el percentil 95.
 
 --
