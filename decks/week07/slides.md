@@ -185,7 +185,7 @@ Planeación financiera a largo plazo
   - Rendimiento sobre el capital ($ROE$).
   - Crecimiento sostenible $g^\*$.
 
---
+---
 
 ## 7.1 Volatilidad financiera y su medición
 
@@ -242,7 +242,7 @@ Planeación financiera a largo plazo
   - $n$: número de observaciones.
   - $\sigma$: volatilidad histórica en la frecuencia utilizada (por ejemplo, diaria).
 
----
+--
 
 ## Volatilidad histórica: interpretación práctica
 
@@ -305,7 +305,7 @@ Planeación financiera a largo plazo
     - Es clave en la valoración y en la gestión de coberturas.
 
 
---
+---
 
 ## 7.2 Simulación de Monte Carlo: idea general
 
