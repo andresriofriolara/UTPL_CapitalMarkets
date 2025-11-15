@@ -68,6 +68,7 @@ Planeación financiera a largo plazo
 --
 
 - Ventas proyectadas:
+
   $$\text{Ventas}_1 = \text{Ventas}_0 \cdot (1 + g_{\text{ventas}})$$
 
 --
@@ -89,13 +90,16 @@ Planeación financiera a largo plazo
 ## Modelo DuPont del $ROE$
 
 - El **modelo DuPont** descompone el $ROE$ en tres factores:
-  $$ROE = \frac{\text{Utilidad Neta}{\text{Ventas}} \times \frac{\text{Ventas}}{\text{Activos Totales}} \times \frac{\text{Activos Totales}}{\text{Capital Contable}}$$
+
+$$ROE = \frac{\text{Utilidad Neta}{\text{Ventas}} \times \frac{\text{Ventas}}{\text{Activos Totales}} \times \frac{\text{Activos Totales}}{\text{Capital Contable}}$$
 
 --
 
 - Términos:
-  - $\dfrac{\text{Utilidad Neta}{\text{Ventas}}$:
-    - **Margen neto** (rentabilidad de las ventas).
+
+$\dfrac{\text{Utilidad Neta}{\text{Ventas}}$:
+
+- **Margen neto** (rentabilidad de las ventas).
 
 --
 
