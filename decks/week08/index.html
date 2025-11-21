@@ -72,16 +72,18 @@
 
 <script>
 (function () {
-  function initWheel() {
-    const wheel = document.getElementById('wheel');
-    const spinBtn = document.getElementById('spinBtn');
-    const resultEl = document.getElementById('result');
-    const remainingList = document.getElementById('remainingList');
-    const usedList = document.getElementById('usedList');
 
-    if (!wheel || !spinBtn) return; // slide not in DOM yet
+  function initRandomWheel() {
+    const root = document.getElementById('random-wheel-slide');
+    if (!root) return;
 
-    // === 1) Define your labels here ===
+    const wheel         = root.querySelector('.wheel');
+    const spinBtn       = root.querySelector('.spin-btn');
+    const resultEl      = root.querySelector('.wheel-result');
+    const remainingList = root.querySelector('.remaining-list');
+    const usedList      = root.querySelector('.used-list');
+
+    // ==== EDIT YOUR LABELS HERE ====
     const labels = [
       'Grupo 1',
       'Grupo 2',
@@ -97,18 +99,15 @@
     const n = labels.length;
     const segmentAngle = 360 / n;
 
-    // Indices available to be chosen (sampling without replacement)
     let availableIndices = labels.map((_, i) => i);
     const usedIndices = [];
 
-    // --- Build conic-gradient for colored segments ---
     function buildWheelBackground() {
       const parts = [];
       for (let i = 0; i < n; i++) {
         const start = i * segmentAngle;
-        const end = (i + 1) * segmentAngle;
-        // Simple evenly-spaced hues
-        const hue = Math.round((360 * i) / n);
+        const end   = (i + 1) * segmentAngle;
+        const hue   = Math.round((360 * i) / n);
         parts.push(`hsl(${hue}, 70%, 60%) ${start}deg ${end}deg`);
       }
       return `conic-gradient(${parts.join(',')})`;
@@ -116,7 +115,6 @@
 
     wheel.style.background = buildWheelBackground();
 
-    // --- Build lists under the wheel ---
     function renderLists() {
       remainingList.innerHTML = '';
       usedList.innerHTML = '';
@@ -142,8 +140,9 @@
 
     spinBtn.addEventListener('click', () => {
       if (isSpinning) return;
+
       if (availableIndices.length === 0) {
-        resultEl.textContent = 'All segments have already been used.';
+        resultEl.textContent = 'All segments already used.';
         spinBtn.disabled = true;
         return;
       }
@@ -151,38 +150,28 @@
       isSpinning = true;
       resultEl.textContent = '';
 
-      // --- Sample one index from remaining (no replacement) ---
+      // sample without replacement
       const r = Math.floor(Math.random() * availableIndices.length);
       const chosenIndex = availableIndices[r];
-      availableIndices.splice(r, 1);       // remove from remaining
-      usedIndices.push(chosenIndex);       // store as used
+      availableIndices.splice(r, 1);
+      usedIndices.push(chosenIndex);
 
-      // --- Compute final rotation ---
-      const fullTurns = 3 + Math.floor(Math.random() * 3); // 3–5 full rotations
-      // We want the chosen segment to end at the top (pointer).
-      // Pointer is at 0deg; we center the chosen segment there.
+      const fullTurns = 3 + Math.floor(Math.random() * 3);
       const segmentCenter = chosenIndex * segmentAngle + segmentAngle / 2;
-      const targetAngle = 360 - segmentCenter; // invert because wheel spins
-
+      const targetAngle = 360 - segmentCenter;
       const finalRotation = fullTurns * 360 + targetAngle;
 
       wheel.style.transition = 'transform 4s cubic-bezier(0.25, 0.1, 0.25, 1)';
-      wheel.style.transform = `rotate(${finalRotation}deg)`;
+      wheel.style.transform  = `rotate(${finalRotation}deg)`;
 
-      const onTransitionEnd = () => {
-        wheel.removeEventListener('transitionend', onTransitionEnd);
-        // Normalize rotation to avoid giant numbers
+      const onEnd = () => {
+        wheel.removeEventListener('transitionend', onEnd);
         currentRotation = finalRotation % 360;
         wheel.style.transition = 'none';
-        wheel.style.transform = `rotate(${currentRotation}deg)`;
+        wheel.style.transform  = `rotate(${currentRotation}deg)`;
 
-        // Update lists
         renderLists();
-
-        // Show result
-        const label = labels[chosenIndex];
-        resultEl.textContent = `Result: ${label}`;
-
+        resultEl.textContent = `Result: ${labels[chosenIndex]}`;
         isSpinning = false;
 
         if (availableIndices.length === 0) {
@@ -190,15 +179,16 @@
         }
       };
 
-      wheel.addEventListener('transitionend', onTransitionEnd);
+      wheel.addEventListener('transitionend', onEnd);
     });
   }
 
-  // Run after DOM is ready
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    initWheel();
+  // run once DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRandomWheel);
   } else {
-    document.addEventListener('DOMContentLoaded', initWheel);
+    initRandomWheel();
   }
+
 })();
 </script>
