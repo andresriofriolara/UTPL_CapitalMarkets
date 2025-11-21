@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UTPL • Mercados y Riesgos Financieros — Semana 08</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Reveal core + stock theme from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css" id="theme">
+
+  <!-- Code highlight theme -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+
+  <!-- Your shared theme (local, relative to week01/) -->
+  <link rel="stylesheet" href="../../shared/css/utpl-theme.css">
+
+  <style>
+    section img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Markdown-powered deck -->
+      <section
+        data-markdown="slides.md"
+        data-separator="^---$"
+        data-separator-vertical="^--$"
+        data-separator-notes="^Note:"
+        data-charset="utf-8">
+      </section>
+    </div>
+  </div>
+
+  <!-- Reveal core + plugins from CDN -->
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../../shared/css/utpl-theme.css">
+
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      controls: true,
+      controlsTutorial: true,
+      controlsLayout: 'edges',
+      progress: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3 ],
+      math: {
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[','\\]']]
+        }
+      }
+    });
+  </script>
+
+  <!-- Clock (top-left; toggle with "C") -->
+  <script src="../../shared/js/clock.js"></script>
+</body>
+</html>
+
+
+<script>
+(function () {
+  function initWheel() {
+    const wheel = document.getElementById('wheel');
+    const spinBtn = document.getElementById('spinBtn');
+    const resultEl = document.getElementById('result');
+    const remainingList = document.getElementById('remainingList');
+    const usedList = document.getElementById('usedList');
+
+    if (!wheel || !spinBtn) return; // slide not in DOM yet
+
+    // === 1) Define your labels here ===
+    const labels = [
+      'Grupo 1',
+      'Grupo 2',
+      'Grupo 3',
+      'Grupo 4',
+      'Grupo 5',
+      'Grupo 6',
+      'Grupo 7',
+      'Grupo 8',
+      'Grupo 9'
+    ];
+
+    const n = labels.length;
+    const segmentAngle = 360 / n;
+
+    // Indices available to be chosen (sampling without replacement)
+    let availableIndices = labels.map((_, i) => i);
+    const usedIndices = [];
+
+    // --- Build conic-gradient for colored segments ---
+    function buildWheelBackground() {
+      const parts = [];
+      for (let i = 0; i < n; i++) {
+        const start = i * segmentAngle;
+        const end = (i + 1) * segmentAngle;
+        // Simple evenly-spaced hues
+        const hue = Math.round((360 * i) / n);
+        parts.push(`hsl(${hue}, 70%, 60%) ${start}deg ${end}deg`);
+      }
+      return `conic-gradient(${parts.join(',')})`;
+    }
+
+    wheel.style.background = buildWheelBackground();
+
+    // --- Build lists under the wheel ---
+    function renderLists() {
+      remainingList.innerHTML = '';
+      usedList.innerHTML = '';
+
+      availableIndices.forEach(i => {
+        const li = document.createElement('li');
+        li.textContent = labels[i];
+        remainingList.appendChild(li);
+      });
+
+      usedIndices.forEach(i => {
+        const li = document.createElement('li');
+        li.textContent = labels[i];
+        li.classList.add('used');
+        usedList.appendChild(li);
+      });
+    }
+
+    renderLists();
+
+    let currentRotation = 0;
+    let isSpinning = false;
+
+    spinBtn.addEventListener('click', () => {
+      if (isSpinning) return;
+      if (availableIndices.length === 0) {
+        resultEl.textContent = 'All segments have already been used.';
+        spinBtn.disabled = true;
+        return;
+      }
+
+      isSpinning = true;
+      resultEl.textContent = '';
+
+      // --- Sample one index from remaining (no replacement) ---
+      const r = Math.floor(Math.random() * availableIndices.length);
+      const chosenIndex = availableIndices[r];
+      availableIndices.splice(r, 1);       // remove from remaining
+      usedIndices.push(chosenIndex);       // store as used
+
+      // --- Compute final rotation ---
+      const fullTurns = 3 + Math.floor(Math.random() * 3); // 3–5 full rotations
+      // We want the chosen segment to end at the top (pointer).
+      // Pointer is at 0deg; we center the chosen segment there.
+      const segmentCenter = chosenIndex * segmentAngle + segmentAngle / 2;
+      const targetAngle = 360 - segmentCenter; // invert because wheel spins
+
+      const finalRotation = fullTurns * 360 + targetAngle;
+
+      wheel.style.transition = 'transform 4s cubic-bezier(0.25, 0.1, 0.25, 1)';
+      wheel.style.transform = `rotate(${finalRotation}deg)`;
+
+      const onTransitionEnd = () => {
+        wheel.removeEventListener('transitionend', onTransitionEnd);
+        // Normalize rotation to avoid giant numbers
+        currentRotation = finalRotation % 360;
+        wheel.style.transition = 'none';
+        wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+        // Update lists
+        renderLists();
+
+        // Show result
+        const label = labels[chosenIndex];
+        resultEl.textContent = `Result: ${label}`;
+
+        isSpinning = false;
+
+        if (availableIndices.length === 0) {
+          spinBtn.disabled = true;
+        }
+      };
+
+      wheel.addEventListener('transitionend', onTransitionEnd);
+    });
+  }
+
+  // Run after DOM is ready
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initWheel();
+  } else {
+    document.addEventListener('DOMContentLoaded', initWheel);
+  }
+})();
+</script>
