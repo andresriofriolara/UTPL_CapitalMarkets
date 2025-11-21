@@ -69,7 +69,6 @@
 </body>
 </html>
 
-
 <script>
 (function () {
 
@@ -83,18 +82,18 @@
     const remainingList = root.querySelector('.remaining-list');
     const usedList      = root.querySelector('.used-list');
 
-    // ==== EDIT YOUR LABELS HERE ====
+    if (!wheel || !spinBtn) return;
+
+    // ====== EDIT LABELS HERE ======
     const labels = [
-      'Grupo 1',
-      'Grupo 2',
-      'Grupo 3',
-      'Grupo 4',
-      'Grupo 5',
-      'Grupo 6',
-      'Grupo 7',
-      'Grupo 8',
-      'Grupo 9'
+      'Student 1',
+      'Student 2',
+      'Student 3',
+      'Student 4',
+      'Student 5',
+      'Student 6'
     ];
+    // ===============================
 
     const n = labels.length;
     const segmentAngle = 360 / n;
@@ -113,8 +112,10 @@
       return `conic-gradient(${parts.join(',')})`;
     }
 
+    // Color segments
     wheel.style.background = buildWheelBackground();
 
+    // Build lists
     function renderLists() {
       remainingList.innerHTML = '';
       usedList.innerHTML = '';
@@ -150,15 +151,15 @@
       isSpinning = true;
       resultEl.textContent = '';
 
-      // sample without replacement
+      // Sample one remaining index (no replacement)
       const r = Math.floor(Math.random() * availableIndices.length);
       const chosenIndex = availableIndices[r];
       availableIndices.splice(r, 1);
       usedIndices.push(chosenIndex);
 
-      const fullTurns = 3 + Math.floor(Math.random() * 3);
+      const fullTurns = 3 + Math.floor(Math.random() * 3); // 3–5 full turns
       const segmentCenter = chosenIndex * segmentAngle + segmentAngle / 2;
-      const targetAngle = 360 - segmentCenter;
+      const targetAngle   = 360 - segmentCenter;
       const finalRotation = fullTurns * 360 + targetAngle;
 
       wheel.style.transition = 'transform 4s cubic-bezier(0.25, 0.1, 0.25, 1)';
@@ -183,11 +184,12 @@
     });
   }
 
-  // run once DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initRandomWheel);
+  // Make sure Reveal has built the slides first
+  if (window.Reveal && Reveal.on) {
+    Reveal.on('ready', initRandomWheel);
   } else {
-    initRandomWheel();
+    // Fallback if Reveal isn't available for some reason
+    document.addEventListener('DOMContentLoaded', initRandomWheel);
   }
 
 })();

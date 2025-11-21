@@ -150,7 +150,6 @@
   color: var(--muted);
 }
 
-/* Wheel layout */
 .wheel-wrapper {
   position: relative;
   width: 260px;
@@ -176,7 +175,6 @@
   font-weight: bold;
 }
 
-/* Lists */
 .wheel-lists {
   display: flex;
   justify-content: center;
@@ -201,20 +199,19 @@
   opacity: 0.5;
 }
 
-/* Button & result */
-#spinBtn {
+.spin-btn {
   margin-top: 10px;
   padding: 6px 18px;
   font-size: 1em;
   cursor: pointer;
 }
 
-#spinBtn:disabled {
+.spin-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-#result {
+.wheel-result {
   margin-top: 10px;
   font-weight: bold;
 }

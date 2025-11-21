@@ -38,7 +38,6 @@ Semana 8 | Presentaciones Finales
   </div>
 </section>
 
-
 ---
 
 ## Cierre del curso
