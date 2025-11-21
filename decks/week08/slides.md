@@ -16,7 +16,7 @@ Semana 8 | Presentaciones Finales
 ---
 
 <section>
-  <h2>RANDOM WHEEL</h2>
+  <h2>Grupos</h2>
 
   <div class="wheel-wrapper">
     <div class="wheel-pointer">▼</div>
