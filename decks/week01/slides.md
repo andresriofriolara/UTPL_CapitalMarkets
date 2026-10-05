@@ -1,6 +1,6 @@
 <section class="title-slide">
 Semana 1 | Introducción
-<div class="subtitle">Mercados y Riesgos Financieros • <em>Octubre 8, 2025</em></div>
+<div class="subtitle">Mercados y Riesgos Financieros • <em>Octubre 6, 2026</em></div>
 </section>
 
 ---
