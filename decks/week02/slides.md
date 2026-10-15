@@ -1,6 +1,6 @@
 <section class="title-slide">
 Semana 2 | Panorama general de la teoría de los mercados financieros 
-<div class="subtitle">Mercados y Riesgos Financieros • <em>Octubre 15, 2025</em></div>
+<div class="subtitle">Mercados y Riesgos Financieros • <em>Octubre 15, 2026</em></div>
 </section>
 
 ---
