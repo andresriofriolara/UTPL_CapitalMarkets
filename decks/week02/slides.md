@@ -43,7 +43,7 @@ Panorama general de la teoría de los mercados financieros
 - 2.1 Teoría del valor presente y tasa de descuento
 - 2.2 Modelo de valoración de activos financieros (CAPM)
 - 2.3 Teoría moderna de portafolio (Markowitz)
-- 2.4 Mercado de capitales eficiente
+- 2.4 Mercado de capitales eficiente 
 - 2.5 Instrumentos del mercado de capitales
     - 2.5.1 Clasificación de instrumentos del mercado de capitales.
 
