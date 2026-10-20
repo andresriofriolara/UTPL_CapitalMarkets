@@ -12,7 +12,7 @@
 
 <section class="title-slide">
 Semana 3 | Valoración de empresas: principios y metodologías
-<div class="subtitle">Mercados y Riesgos Financieros • <em>Octubre 22, 2025</em></div>
+<div class="subtitle">Mercados y Riesgos Financieros • <em>Octubre 20, 2026</em></div>
 </section>
 
 ---
