@@ -1,6 +1,6 @@
 <section class="title-slide">
 Semana 4 | Instrumentos de cobertura de riesgos mediante derivados financieros 
-<div class="subtitle">Mercados y Riesgos Financieros • <em>Octubre 29, 2025</em></div>
+<div class="subtitle">Mercados y Riesgos Financieros • <em>Octubre 27, 2026</em></div>
 </section>
 
 ---
