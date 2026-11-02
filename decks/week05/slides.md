@@ -1,6 +1,6 @@
 <section class="title-slide">
 Semana 5 | Mapeo de Riesgos y VaR
-<div class="subtitle">Mercados y Riesgos Financieros • <em>Noviembre 05, 2025</em></div>
+<div class="subtitle">Mercados y Riesgos Financieros • <em>Noviembre 03, 2026</em></div>
 </section>
 
 ---
