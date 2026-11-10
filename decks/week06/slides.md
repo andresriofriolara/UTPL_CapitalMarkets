@@ -1,6 +1,6 @@
 <section class="title-slide">
 Semana 6 | Planificación de la estrategia de inversión
-<div class="subtitle">Mercados y Riesgos Financieros • <em>Noviembre 12, 2025</em></div>
+<div class="subtitle">Mercados y Riesgos Financieros • <em>Noviembre 10, 2026</em></div>
 </section>
 
 ---
