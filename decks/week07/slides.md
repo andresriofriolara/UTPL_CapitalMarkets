@@ -1,6 +1,6 @@
 <section class="title-slide">
 Semana 7 | Planeación financiera a largo plazo
-<div class="subtitle">Mercados y Riesgos Financieros • <em>Noviembre 19, 2025</em></div>
+<div class="subtitle">Mercados y Riesgos Financieros • <em>Noviembre 17, 2026</em></div>
 </section>
 
 ---
@@ -27,7 +27,6 @@ Planeación financiera a largo plazo
 
 - **7.1** Volatilidad financiera y su medición 
 - **7.2** Simulación de Monte Carlo
-- **7.3** Taller Simulador
 
 ---
 
@@ -488,10 +487,6 @@ $\dfrac{\text{Utilidad Neta}{\text{Ventas}}$:
     - Se alcanza el crecimiento objetivo.
     - Se viola alguna restricción de apalancamiento.
     - Se erosionan significativamente las utilidades o el capital.
-
----
-
-## 7.3 Taller Simulador
 
 ---
 
